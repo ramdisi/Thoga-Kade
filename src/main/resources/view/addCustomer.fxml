@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddCustomerController">
+   <children>
+      <AnchorPane prefHeight="526.0" prefWidth="604.0">
+         <children>
+            <Label alignment="CENTER" layoutX="114.0" layoutY="14.0" prefHeight="34.0" prefWidth="344.0" text="Add Customer Details" textFill="#dd1919">
+               <font>
+                  <Font name="System Bold Italic" size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="68.0" prefHeight="34.0" prefWidth="157.0" text="Customer ID">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="116.0" prefHeight="34.0" prefWidth="157.0" text="Title">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="172.0" prefHeight="34.0" prefWidth="157.0" text="Name">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="213.0" prefHeight="34.0" prefWidth="157.0" text="Date of Birth">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="255.0" prefHeight="34.0" prefWidth="157.0" text="Salary">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="292.0" prefHeight="34.0" prefWidth="157.0" text="Address">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="341.0" prefHeight="34.0" prefWidth="157.0" text="City">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="385.0" prefHeight="34.0" prefWidth="157.0" text="Province">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="428.0" prefHeight="34.0" prefWidth="157.0" text="Postal Code">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="335.0" layoutY="477.0" mnemonicParsing="false" onAction="#addCustomer_btn_OnAction" prefHeight="35.0" prefWidth="234.0" text="Add Customer" textFill="#5316a8">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <TextField fx:id="txt_cusID" editable="false" layoutX="234.0" layoutY="73.0" prefHeight="34.0" prefWidth="254.0" />
+            <ComboBox fx:id="combobox_title" layoutX="234.0" layoutY="126.0" prefHeight="34.0" prefWidth="254.0" />
+            <TextField fx:id="txt_name" layoutX="234.0" layoutY="177.0" prefHeight="34.0" prefWidth="254.0" />
+            <DatePicker fx:id="date_dob" layoutX="234.0" layoutY="218.0" prefHeight="34.0" prefWidth="254.0" />
+            <TextField fx:id="txt_salary" layoutX="234.0" layoutY="260.0" prefHeight="35.0" prefWidth="254.0" />
+            <TextField fx:id="txt_address" layoutX="234.0" layoutY="302.0" prefHeight="34.0" prefWidth="254.0" />
+            <TextField fx:id="txt_city" layoutX="234.0" layoutY="346.0" prefHeight="34.0" prefWidth="254.0" />
+            <TextField fx:id="txt_province" layoutX="234.0" layoutY="386.0" prefHeight="34.0" prefWidth="254.0" />
+            <TextField fx:id="txt_postalCode" layoutX="234.0" layoutY="433.0" prefHeight="34.0" prefWidth="254.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
