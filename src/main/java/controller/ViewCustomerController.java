@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import model.dto.Customer;
 
 import java.net.URL;
@@ -51,10 +52,37 @@ public class ViewCustomerController implements Initializable {
 
     private ObservableList<Customer> observableCustomerList = FXCollections.observableArrayList();
 
+    private Stage stage = new Stage();
+
+    private Connection con;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadTable();
+    }
+
+    public void deleteSelectedCustomer_btn_OnAction(ActionEvent actionEvent) {
+        Customer selectedCustomer = customerDetailTable.getSelectionModel().getSelectedItem();
         try {
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/thogakade","root","1234");
+            con.prepareStatement("delete from customer where custID='"+selectedCustomer.getCustID()+"'").execute();
+            customerDetailTable.getItems().clear();
+            loadTable();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public void editSelectedCustomer_btn_OnAction(ActionEvent actionEvent) {
+        Customer selectedCustomer = customerDetailTable.getSelectionModel().getSelectedItem();
+
+
+    }
+
+    public void loadTable (){
+        try {
+            con = DriverManager.getConnection("jdbc:mysql://localhost/thogakade","root","1234");
             ResultSet resultSet = con.prepareStatement("select * from customer").executeQuery();
             while(resultSet.next()){
                 observableCustomerList.add(new Customer(
@@ -82,12 +110,5 @@ public class ViewCustomerController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-    }
-
-    public void deleteSelectedCustomer_btn_OnAction(ActionEvent actionEvent) {
-    }
-
-    public void editSelectedCustomer_btn_OnAction(ActionEvent actionEvent) {
     }
 }

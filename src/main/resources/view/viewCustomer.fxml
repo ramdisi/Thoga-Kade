@@ -17,9 +17,9 @@
                   <Font name="System Bold Italic" size="20.0" />
                </font>
             </Label>
-            <TableView fx:id="customerDetailTable" layoutX="10.0" layoutY="53.0" prefHeight="294.0" prefWidth="726.0">
+            <TableView fx:id="customerDetailTable" editable="true" layoutX="10.0" layoutY="53.0" prefHeight="294.0" prefWidth="726.0">
               <columns>
-                <TableColumn fx:id="column_custID" prefWidth="75.0" text="Cust ID" />
+                <TableColumn fx:id="column_custID" editable="false" prefWidth="75.0" text="Cust ID" />
                 <TableColumn fx:id="column_title" prefWidth="52.0" text="Title" />
                   <TableColumn fx:id="column_name" prefWidth="83.0" text="Name" />
                   <TableColumn fx:id="column_dob" prefWidth="90.0" text="DOB" />
