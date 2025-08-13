@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainPageController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Label alignment="CENTER" layoutX="108.0" layoutY="10.0" prefHeight="38.0" prefWidth="361.0" text="Thoga Kade" textFill="#bc1212">
+               <font>
+                  <Font name="System Bold Italic" size="26.0" />
+               </font>
+            </Label>
+            <Button layoutX="65.0" layoutY="97.0" mnemonicParsing="false" onAction="#addCustomer_btn_OnAction" prefHeight="38.0" prefWidth="220.0" text="Add Customer" />
+            <Button layoutX="318.0" layoutY="97.0" mnemonicParsing="false" onAction="#addItem_btn_OnAction" prefHeight="38.0" prefWidth="220.0" text="Add Item" />
+            <Button layoutX="65.0" layoutY="175.0" mnemonicParsing="false" onAction="#customerDetails_btn_OnAction" prefHeight="38.0" prefWidth="220.0" text="View , Edit , Delete Customer Details" />
+            <Button layoutX="318.0" layoutY="175.0" mnemonicParsing="false" onAction="#itemDetails_btn_OnAction" prefHeight="38.0" prefWidth="220.0" text="View , Edit , Delete Item Details" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
