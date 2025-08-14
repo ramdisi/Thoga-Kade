@@ -33,20 +33,13 @@ public class AddItemController implements Initializable {
 
     @FXML
     void addItem_btn_OnAction(ActionEvent event) {
-        String pkgSize,description;
-        Integer qtyOnHand;
-        Double unitPrice;
-        description = txt_description.getText();
-        pkgSize = txt_pkgSize.getText();
-        qtyOnHand = Integer.parseInt(txt_qtyOnHand.getText());
-        unitPrice = Double.parseDouble(txt_unitPrice.getText());
         try {
             PreparedStatement preparedStatement = con.prepareStatement("insert into item values (?,?,?,?,?)");
             preparedStatement.setObject(1,itemCode);
-            preparedStatement.setObject(2,description);
-            preparedStatement.setObject(3,pkgSize);
-            preparedStatement.setObject(4,unitPrice);
-            preparedStatement.setObject(5,qtyOnHand);
+            preparedStatement.setObject(2,txt_description.getText());
+            preparedStatement.setObject(3,txt_pkgSize.getText());
+            preparedStatement.setObject(4,Integer.parseInt(txt_qtyOnHand.getText()));
+            preparedStatement.setObject(5,Double.parseDouble(txt_unitPrice.getText()));
             preparedStatement.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);

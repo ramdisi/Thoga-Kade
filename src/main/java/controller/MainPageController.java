@@ -24,7 +24,12 @@ public class MainPageController {
 
     @FXML
     void itemDetails_btn_OnAction(ActionEvent event) {
-
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/viewItem.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
     }
 
     @FXML

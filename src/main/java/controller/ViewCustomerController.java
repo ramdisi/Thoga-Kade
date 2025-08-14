@@ -84,8 +84,14 @@ public class ViewCustomerController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            con = DriverManager.getConnection("jdbc:mysql://localhost/thogakade","root","1234");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         loadTable();
         combobox_title.getItems().addAll("Mr","Mrs","Ms","Thero");
+
     }
 
     public void deleteSelectedCustomer_btn_OnAction(ActionEvent actionEvent) {
@@ -119,7 +125,6 @@ public class ViewCustomerController implements Initializable {
     public void loadTable (){
         try {
             customerDetailTable.getItems().clear();
-            con = DriverManager.getConnection("jdbc:mysql://localhost/thogakade","root","1234");
             ResultSet resultSet = con.prepareStatement("select * from customer").executeQuery();
             while(resultSet.next()){
                 observableCustomerList.add(new Customer(

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="550.0" prefWidth="676.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewItemController">
+   <children>
+      <Label alignment="CENTER" layoutX="126.0" layoutY="15.0" prefHeight="33.0" prefWidth="407.0" text="Item Details" textFill="#b51d1d">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table_item" layoutX="39.0" layoutY="67.0" onMouseClicked="#OnClick_itemTable" prefHeight="262.0" prefWidth="590.0">
+        <columns>
+          <TableColumn fx:id="column_itemCode" prefWidth="87.0" text="Item Code" />
+          <TableColumn fx:id="column_description" prefWidth="163.0" text="Description" />
+            <TableColumn fx:id="column_pkgSize" prefWidth="108.0" text="Pakage Size" />
+            <TableColumn fx:id="column_unitPrice" prefWidth="112.0" text="Unit Price" />
+            <TableColumn fx:id="column_qtyOnHand" prefWidth="119.0" text="Qty On Hand" />
+        </columns>
+      </TableView>
+      <Label layoutX="98.0" layoutY="339.0" prefHeight="38.0" prefWidth="228.0" text="Selected Item Code" textFill="#b90d0d">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="394.0" prefHeight="29.0" prefWidth="103.0" text="Description" />
+      <Label layoutX="366.0" layoutY="394.0" prefHeight="29.0" prefWidth="103.0" text="package size" />
+      <Label layoutX="23.0" layoutY="448.0" prefHeight="29.0" prefWidth="103.0" text="Unit Price" />
+      <Label layoutX="366.0" layoutY="448.0" prefHeight="29.0" prefWidth="103.0" text="Qty On Hand" />
+      <Button layoutX="39.0" layoutY="502.0" mnemonicParsing="false" onAction="#btn_OnAction_deleteItem" prefHeight="38.0" prefWidth="163.0" text="Delete Item Details" />
+      <Button layoutX="466.0" layoutY="502.0" mnemonicParsing="false" onAction="#btn_OnAction_editItem" prefHeight="38.0" prefWidth="163.0" text="Edit Item Details" />
+      <TextArea fx:id="txt_description" layoutX="126.0" layoutY="374.0" prefHeight="69.0" prefWidth="200.0" />
+      <TextField fx:id="txt_pkgSize" layoutX="452.0" layoutY="396.0" prefHeight="25.0" prefWidth="200.0" />
+      <TextField fx:id="txt_unitPrice" layoutX="128.0" layoutY="450.0" prefHeight="25.0" prefWidth="200.0" />
+      <TextField fx:id="txt_qtyOnHand" layoutX="452.0" layoutY="450.0" prefHeight="25.0" prefWidth="200.0" />
+      <TextField fx:id="txt_itemCode" editable="false" layoutX="349.0" layoutY="343.0" prefHeight="29.0" prefWidth="240.0" />
+   </children>
+</AnchorPane>
