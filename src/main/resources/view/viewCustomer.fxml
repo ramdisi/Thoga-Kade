@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewCustomerController">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="746.0">
+      <AnchorPane prefHeight="642.0" prefWidth="746.0">
          <children>
             <Label alignment="CENTER" layoutX="155.0" layoutY="14.0" prefHeight="32.0" prefWidth="368.0" text="Customer Details" textFill="#c60808">
                <font>
                   <Font name="System Bold Italic" size="20.0" />
                </font>
             </Label>
-            <TableView fx:id="customerDetailTable" editable="true" layoutX="10.0" layoutY="53.0" prefHeight="294.0" prefWidth="726.0">
+            <TableView fx:id="customerDetailTable" layoutX="10.0" layoutY="53.0" onMouseClicked="#table_OnMouseClick" prefHeight="294.0" prefWidth="726.0">
               <columns>
-                <TableColumn fx:id="column_custID" editable="false" prefWidth="75.0" text="Cust ID" />
+                <TableColumn fx:id="column_custID" prefWidth="75.0" text="Cust ID" />
                 <TableColumn fx:id="column_title" prefWidth="52.0" text="Title" />
                   <TableColumn fx:id="column_name" prefWidth="83.0" text="Name" />
                   <TableColumn fx:id="column_dob" prefWidth="90.0" text="DOB" />
@@ -30,8 +32,30 @@
                   <TableColumn fx:id="column_postalCode" prefWidth="86.0" text="Postal Code" />
               </columns>
             </TableView>
-            <Button layoutX="50.0" layoutY="354.0" mnemonicParsing="false" onAction="#deleteSelectedCustomer_btn_OnAction" prefHeight="39.0" prefWidth="207.0" text="Delete Selected Customer" />
-            <Button layoutX="486.0" layoutY="354.0" mnemonicParsing="false" onAction="#editSelectedCustomer_btn_OnAction" prefHeight="39.0" prefWidth="207.0" text="Edit Selected Details" />
+            <Button layoutX="17.0" layoutY="597.0" mnemonicParsing="false" onAction="#deleteSelectedCustomer_btn_OnAction" prefHeight="39.0" prefWidth="207.0" text="Delete Selected Customer" />
+            <Button layoutX="523.0" layoutY="597.0" mnemonicParsing="false" onAction="#editSelectedCustomer_btn_OnAction" prefHeight="39.0" prefWidth="207.0" text="Edit Selected Details" />
+            <Label layoutX="14.0" layoutY="405.0" prefHeight="32.0" prefWidth="106.0" text="Title" />
+            <Label layoutX="339.0" layoutY="405.0" prefHeight="32.0" prefWidth="106.0" text="Name" />
+            <Label layoutX="14.0" layoutY="458.0" prefHeight="32.0" prefWidth="106.0" text="DOB" />
+            <Label layoutX="339.0" layoutY="458.0" prefHeight="32.0" prefWidth="106.0" text="Salary" />
+            <Label layoutX="14.0" layoutY="509.0" prefHeight="32.0" prefWidth="106.0" text="Address" />
+            <Label layoutX="339.0" layoutY="509.0" prefHeight="32.0" prefWidth="106.0" text="City" />
+            <Label layoutX="14.0" layoutY="551.0" prefHeight="32.0" prefWidth="106.0" text="Province" />
+            <Label layoutX="339.0" layoutY="551.0" prefHeight="32.0" prefWidth="106.0" text="Postal Code" />
+            <Label layoutX="44.0" layoutY="358.0" prefHeight="39.0" prefWidth="222.0" text="Selected Customer ID" textFill="#b22424">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="date_dob" layoutX="89.0" layoutY="462.0" prefHeight="25.0" prefWidth="231.0" />
+            <ComboBox fx:id="combobox_title" layoutX="89.0" layoutY="409.0" prefHeight="25.0" prefWidth="231.0" />
+            <TextField fx:id="txt_name" layoutX="438.0" layoutY="409.0" prefHeight="25.0" prefWidth="231.0" />
+            <TextField fx:id="txt_address" layoutX="89.0" layoutY="513.0" prefHeight="25.0" prefWidth="231.0" />
+            <TextField fx:id="txt_province" layoutX="89.0" layoutY="555.0" prefHeight="25.0" prefWidth="231.0" />
+            <TextField fx:id="txt_salary" layoutX="438.0" layoutY="462.0" prefHeight="25.0" prefWidth="231.0" />
+            <TextField fx:id="txt_city" layoutX="438.0" layoutY="513.0" prefHeight="25.0" prefWidth="231.0" />
+            <TextField fx:id="txt_postalCode" layoutX="438.0" layoutY="555.0" prefHeight="25.0" prefWidth="231.0" />
+            <TextField fx:id="txt_custID" editable="false" layoutX="318.0" layoutY="358.0" prefHeight="32.0" prefWidth="303.0" />
          </children>
       </AnchorPane>
    </children>

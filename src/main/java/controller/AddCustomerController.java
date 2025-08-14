@@ -9,7 +9,6 @@ import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class AddCustomerController implements Initializable {
@@ -48,28 +47,17 @@ public class AddCustomerController implements Initializable {
 
     @FXML
     void addCustomer_btn_OnAction(ActionEvent event) {
-        String title,name,address,city,province,postalCode;
-        LocalDate dob;
-        Double salary;
-        title = combobox_title.getValue();
-        name = txt_name.getText();
-        address = txt_address.getText();
-        city = txt_city.getText();
-        province = txt_province.getText();
-        postalCode = txt_postalCode.getText();
-        dob = date_dob.getValue();
-        salary = Double.parseDouble(txt_salary.getText());
         try {
             PreparedStatement preparedStatement = con.prepareStatement("Insert into customer values (?,?,?,?,?,?,?,?,?)");
             preparedStatement.setObject(1,custID);
-            preparedStatement.setObject(2,title);
-            preparedStatement.setObject(3,name);
-            preparedStatement.setObject(4,dob);
-            preparedStatement.setObject(5,salary);
-            preparedStatement.setObject(6,address);
-            preparedStatement.setObject(7,city);
-            preparedStatement.setObject(8,province);
-            preparedStatement.setObject(9,postalCode);
+            preparedStatement.setObject(2,combobox_title.getValue());
+            preparedStatement.setObject(3,txt_name.getText());
+            preparedStatement.setObject(4,date_dob.getValue());
+            preparedStatement.setObject(5,Double.parseDouble(txt_salary.getText()));
+            preparedStatement.setObject(6,txt_address.getText());
+            preparedStatement.setObject(7,txt_city.getText());
+            preparedStatement.setObject(8,txt_province.getText());
+            preparedStatement.setObject(9,txt_postalCode.getText());
             preparedStatement.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
